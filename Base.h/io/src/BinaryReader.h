@@ -8,12 +8,17 @@ class BinaryReader
 {
 
 private:
-	FILE* _file = NULL;
+	FILE* _file;
 
 public:
 	size_t LastReadedCount;
 
 public:
+	BinaryReader() 
+	{
+		_file = NULL;
+	}
+
 	bool OpenFile(char* path)
 	{
 		_file = fopen(path, "r+b");
