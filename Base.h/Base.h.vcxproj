@@ -67,6 +67,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="compression\compression.h" />
+    <ClInclude Include="compression\src\Inflate.h" />
     <ClInclude Include="io\io.h" />
     <ClInclude Include="io\src\BinaryReader.h" />
     <ClInclude Include="sockets\sockets.h" />
@@ -82,6 +84,9 @@
     <ClInclude Include="utils\src\linux\sleep.h" />
     <ClInclude Include="utils\utils.h" />
     <ClInclude Include="utils\src\windows\sleep.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="compression\src\miniz.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
