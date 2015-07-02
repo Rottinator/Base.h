@@ -2,9 +2,12 @@
 #define _BINARY_READER_H_
 
 #include <cstdio>
+
+#include "BinaryReaderBase.h"
+
 #pragma warning(disable : 4996)
 
-class BinaryReader
+class BinaryReader : public BinaryReaderBase
 {
 
 private:
@@ -76,6 +79,11 @@ public:
 		LastReadedCount = fread(&readValue, sizeof(double), 1, _file);
 		
 		return readValue;
+	}
+
+	void Read(void* buffer, size_t size)
+	{
+		LastReadedCount = fread(buffer, size, 1, _file);
 	}
 
 	void CloseFile()

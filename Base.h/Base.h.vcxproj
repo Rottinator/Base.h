@@ -71,6 +71,7 @@
     <ClInclude Include="compression\src\Inflate.h" />
     <ClInclude Include="io\io.h" />
     <ClInclude Include="io\src\BinaryReader.h" />
+    <ClInclude Include="io\src\ExpandoBinaryReader.h" />
     <ClInclude Include="sockets\sockets.h" />
     <ClInclude Include="sockets\src\linux\socket.h" />
     <ClInclude Include="sockets\src\TcpClient.h" />
