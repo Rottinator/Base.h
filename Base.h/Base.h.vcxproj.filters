@@ -19,6 +19,7 @@
     <ClInclude Include="compression\src\Inflate.h" />
     <ClInclude Include="compression\compression.h" />
     <ClInclude Include="io\src\ExpandoBinaryReader.h" />
+    <ClInclude Include="io\src\BinaryReaderBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="compression\src\miniz.c" />

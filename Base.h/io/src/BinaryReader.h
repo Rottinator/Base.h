@@ -36,6 +36,24 @@ public:
 		}
 	}
 
+	char ReadChar()
+	{
+		char readValue = 0;
+
+		LastReadedCount = fread(&readValue, sizeof(char), 1, _file);
+
+		return readValue;
+	}
+
+	unsigned char ReadUChar()
+	{
+		unsigned char readValue = 0;
+
+		LastReadedCount = fread(&readValue, sizeof(unsigned char), 1, _file);
+
+		return readValue;
+	}
+
 	short ReadShort()
 	{
 		short readValue = 0;

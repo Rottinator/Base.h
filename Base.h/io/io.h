@@ -5,4 +5,6 @@
 #include "src/BinaryReader.h"
 #include "src/ExpandoBinaryReader.h"
 
+typedef unsigned char byte;
+
 #endif

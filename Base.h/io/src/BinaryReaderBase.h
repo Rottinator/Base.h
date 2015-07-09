@@ -6,6 +6,10 @@ class BinaryReaderBase
 public:
 	virtual bool OpenFile(char* path) = 0;
 
+	virtual char ReadChar() = 0;
+
+	virtual unsigned char ReadUChar() = 0;
+
 	virtual short ReadShort() = 0;
 
 	virtual long ReadLong() = 0;

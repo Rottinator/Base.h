@@ -25,6 +25,24 @@ public:
 		return _binaryReader.OpenFile(path);
 	}
 
+	char ReadChar()
+	{
+		char readValue = 0;
+
+		Read(&readValue, sizeof(char));
+
+		return readValue;
+	}
+
+	unsigned char ReadUChar()
+	{
+		unsigned char readValue = 0;
+
+		Read(&readValue, sizeof(unsigned char));
+
+		return readValue;
+	}
+
 	short ReadShort()
 	{
 		short readValue = 0;
