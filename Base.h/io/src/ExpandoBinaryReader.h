@@ -98,6 +98,11 @@ public:
 		_binaryReader.SetPosition(position);
 	}
 
+	void SetPosition(int value, int seekValue)
+	{
+		_binaryReader.SetPosition(value, seekValue);
+	}
+
 	void CloseFile()
 	{
 		_binaryReader.CloseFile();

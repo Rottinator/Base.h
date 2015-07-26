@@ -118,6 +118,12 @@ public:
 	{
 		fseek(_file, position, SEEK_SET);
 	}
+
+	void SetPosition(int value, int seekValue)
+	{
+		fseek(_file, value, seekValue);
+	}
+
 };
 
 #endif

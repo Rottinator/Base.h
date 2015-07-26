@@ -25,6 +25,8 @@ public:
 	virtual int GetPosition() = 0;
 
 	virtual void SetPosition(int position) = 0;
+
+	virtual void SetPosition(int value, int seekValue) = 0;
 };
 
 #endif
