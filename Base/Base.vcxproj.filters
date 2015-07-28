@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="utils\utils.h" />
+    <ClInclude Include="utils\src\sleep.h" />
+    <ClInclude Include="threading\threading.h" />
+    <ClInclude Include="threading\src\linux\thread.h" />
+    <ClInclude Include="threading\src\windows\thread.h" />
+    <ClInclude Include="base.h" />
+    <ClInclude Include="io\io.h" />
+    <ClInclude Include="io\src\binaryReaderBase.h" />
+    <ClInclude Include="io\src\binaryReader.h" />
+    <ClInclude Include="io\src\expandoBinaryReader.h" />
+    <ClInclude Include="compression\compression.h" />
+    <ClInclude Include="compression\src\inflate.h" />
+    <ClInclude Include="sockets\sockets.h" />
+    <ClInclude Include="sockets\src\tcpClient.h" />
+    <ClInclude Include="sockets\src\tcpListener.h" />
+    <ClInclude Include="sockets\src\udpClient.h" />
+    <ClInclude Include="sockets\src\linux\socket.h" />
+    <ClInclude Include="sockets\src\windows\socket.h" />
+    <ClInclude Include="sockets\src\windows\bind.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="utils\src\linux\sleep.cpp" />
+    <ClCompile Include="utils\src\windows\sleep.cpp" />
+    <ClCompile Include="threading\src\windows\thread.cpp" />
+    <ClCompile Include="threading\src\linux\thread.cpp" />
+    <ClCompile Include="io\src\binaryReader.cpp" />
+    <ClCompile Include="io\src\expandoBinaryReader.cpp" />
+    <ClCompile Include="compression\src\miniz.c" />
+    <ClCompile Include="compression\src\inflate.cpp" />
+    <ClCompile Include="sockets\src\linux\socket.cpp" />
+    <ClCompile Include="sockets\src\windows\socket.cpp" />
+    <ClCompile Include="sockets\src\windows\bind.cpp" />
+    <ClCompile Include="sockets\src\tcpClient.cpp" />
+    <ClCompile Include="sockets\src\tcpListener.cpp" />
+    <ClCompile Include="sockets\src\udpClient.cpp" />
+  </ItemGroup>
+</Project>
