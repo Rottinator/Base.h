@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base.h", "Base.h\Base.h.vcxproj", "{B3E99BD4-EEEE-4106-B0EB-18BFEC810C78}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "Base\Base.vcxproj", "{4DF43032-C56C-46AA-86AC-60131DA7F9C6}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3E99BD4-EEEE-4106-B0EB-18BFEC810C78}.Debug|x86.ActiveCfg = Debug|Win32
-		{B3E99BD4-EEEE-4106-B0EB-18BFEC810C78}.Debug|x86.Build.0 = Debug|Win32
-		{B3E99BD4-EEEE-4106-B0EB-18BFEC810C78}.Release|x86.ActiveCfg = Release|Win32
-		{B3E99BD4-EEEE-4106-B0EB-18BFEC810C78}.Release|x86.Build.0 = Release|Win32
 		{4DF43032-C56C-46AA-86AC-60131DA7F9C6}.Debug|x86.ActiveCfg = Debug|Win32
 		{4DF43032-C56C-46AA-86AC-60131DA7F9C6}.Debug|x86.Build.0 = Debug|Win32
 		{4DF43032-C56C-46AA-86AC-60131DA7F9C6}.Release|x86.ActiveCfg = Release|Win32
