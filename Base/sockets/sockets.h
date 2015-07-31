@@ -14,7 +14,9 @@ namespace Base
 			char* Any;
 			char* Broadcast;
 			char* Localhost;
-		} IpAddress = { "0.0.0.0", "255.255.255.255", "127.0.0.1" };
+		};
+
+		extern addressContainer IpAddress;
 	}
 }
 
