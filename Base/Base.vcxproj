@@ -14,10 +14,13 @@
     <ClInclude Include="base.h" />
     <ClInclude Include="compression\compression.h" />
     <ClInclude Include="compression\src\inflate.h" />
+    <ClInclude Include="config\config.h" />
+    <ClInclude Include="config\src\configReader.h" />
     <ClInclude Include="io\io.h" />
-    <ClInclude Include="io\src\binaryReader.h" />
-    <ClInclude Include="io\src\binaryReaderBase.h" />
-    <ClInclude Include="io\src\expandoBinaryReader.h" />
+    <ClInclude Include="io\src\binaryReader\binaryReader.h" />
+    <ClInclude Include="io\src\binaryReader\binaryReaderBase.h" />
+    <ClInclude Include="io\src\binaryReader\expandoBinaryReader.h" />
+    <ClInclude Include="io\src\textReader\textReader.h" />
     <ClInclude Include="sockets\sockets.h" />
     <ClInclude Include="sockets\src\linux\socket.h" />
     <ClInclude Include="sockets\src\tcpClient.h" />
@@ -28,14 +31,20 @@
     <ClInclude Include="threading\src\linux\thread.h" />
     <ClInclude Include="threading\src\windows\thread.h" />
     <ClInclude Include="threading\threading.h" />
+    <ClInclude Include="utils\src\ArrayUtils.h" />
+    <ClInclude Include="utils\src\list.h" />
     <ClInclude Include="utils\src\sleep.h" />
+    <ClInclude Include="utils\src\stringHelper.h" />
     <ClInclude Include="utils\utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="compression\src\inflate.cpp" />
     <ClCompile Include="compression\src\miniz.c" />
-    <ClCompile Include="io\src\binaryReader.cpp" />
-    <ClCompile Include="io\src\expandoBinaryReader.cpp" />
+    <ClCompile Include="config\src\configReader.cpp" />
+    <ClCompile Include="io\src\binaryReader\binaryReader.cpp" />
+    <ClCompile Include="io\src\binaryReader\expandoBinaryReader.cpp" />
+    <ClCompile Include="io\src\textReader\textReader.cpp" />
+    <ClCompile Include="sockets\sockets.cpp" />
     <ClCompile Include="sockets\src\linux\socket.cpp" />
     <ClCompile Include="sockets\src\tcpClient.cpp" />
     <ClCompile Include="sockets\src\tcpListener.cpp" />
@@ -44,7 +53,9 @@
     <ClCompile Include="sockets\src\windows\socket.cpp" />
     <ClCompile Include="threading\src\linux\thread.cpp" />
     <ClCompile Include="threading\src\windows\thread.cpp" />
+    <ClCompile Include="utils\src\arrayUtils.cpp" />
     <ClCompile Include="utils\src\linux\sleep.cpp" />
+    <ClCompile Include="utils\src\stringHelper.cpp" />
     <ClCompile Include="utils\src\windows\sleep.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
