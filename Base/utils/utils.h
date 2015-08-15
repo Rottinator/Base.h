@@ -1,9 +1,13 @@
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
-#include "src/sleep.h"
-#include "src/list.h"
-#include "src/arrayUtils.h"
-#include "src/stringHelper.h"
+#include "src/common/constants.h"
+#include "src/common/sleep.h"
+#include "src/common/list.h"
+#include "src/common/arrayUtils.h"
+#include "src/common/stringHelper.h"
+#include "src/common/stringBuilder.h"
+#include "src/structureDefinitions/structureDefinitionStorage.h"
+#include "src/structureDefinitions/structureDefinitionHelper.h"
 
 #endif

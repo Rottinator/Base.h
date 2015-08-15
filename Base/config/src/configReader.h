@@ -11,8 +11,6 @@ namespace Base
 {
 	namespace Config
 	{
-		enum DataType { Integer = 0, Bool = 1, Float = 2, String = 3 };
-
 		struct ConfigEntry
 		{
 			char* EntryName;

@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="utils\utils.h" />
-    <ClInclude Include="utils\src\sleep.h" />
     <ClInclude Include="threading\threading.h" />
     <ClInclude Include="threading\src\linux\thread.h" />
     <ClInclude Include="threading\src\windows\thread.h" />
@@ -19,17 +18,23 @@
     <ClInclude Include="sockets\src\windows\bind.h" />
     <ClInclude Include="config\config.h" />
     <ClInclude Include="config\src\configReader.h" />
-    <ClInclude Include="utils\src\list.h" />
-    <ClInclude Include="utils\src\ArrayUtils.h" />
-    <ClInclude Include="io\src\binaryReader\binaryReader.h" />
-    <ClInclude Include="io\src\binaryReader\binaryReaderBase.h" />
-    <ClInclude Include="io\src\binaryReader\expandoBinaryReader.h" />
-    <ClInclude Include="io\src\textReader\textReader.h" />
-    <ClInclude Include="utils\src\stringHelper.h" />
+    <ClInclude Include="io\src\binary\binaryReader.h" />
+    <ClInclude Include="io\src\binary\binaryReaderBase.h" />
+    <ClInclude Include="io\src\binary\expandoBinaryReader.h" />
+    <ClInclude Include="io\src\text\textReader.h" />
+    <ClInclude Include="io\src\json\jsonSerializer.h" />
+    <ClInclude Include="utils\src\common\ArrayUtils.h" />
+    <ClInclude Include="utils\src\common\list.h" />
+    <ClInclude Include="utils\src\common\sleep.h" />
+    <ClInclude Include="utils\src\common\stringHelper.h" />
+    <ClInclude Include="utils\src\structureDefinitions\structureDefinitionStorage.h" />
+    <ClInclude Include="utils\src\structureDefinitions\structureDefinition.h" />
+    <ClInclude Include="utils\src\structureDefinitions\structureProperty.h" />
+    <ClInclude Include="utils\src\common\constants.h" />
+    <ClInclude Include="utils\src\common\stringBuilder.h" />
+    <ClInclude Include="utils\src\structureDefinitions\structureDefinitionHelper.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="utils\src\linux\sleep.cpp" />
-    <ClCompile Include="utils\src\windows\sleep.cpp" />
     <ClCompile Include="threading\src\windows\thread.cpp" />
     <ClCompile Include="threading\src\linux\thread.cpp" />
     <ClCompile Include="compression\src\miniz.c" />
@@ -42,10 +47,19 @@
     <ClCompile Include="sockets\src\udpClient.cpp" />
     <ClCompile Include="sockets\sockets.cpp" />
     <ClCompile Include="config\src\configReader.cpp" />
-    <ClCompile Include="utils\src\arrayUtils.cpp" />
-    <ClCompile Include="io\src\binaryReader\binaryReader.cpp" />
-    <ClCompile Include="io\src\binaryReader\expandoBinaryReader.cpp" />
-    <ClCompile Include="io\src\textReader\textReader.cpp" />
-    <ClCompile Include="utils\src\stringHelper.cpp" />
+    <ClCompile Include="io\src\binary\binaryReader.cpp" />
+    <ClCompile Include="io\src\binary\expandoBinaryReader.cpp" />
+    <ClCompile Include="io\src\text\textReader.cpp" />
+    <ClCompile Include="io\src\json\jsonSerializer.cpp" />
+    <ClCompile Include="utils\src\common\windows\sleep.cpp" />
+    <ClCompile Include="utils\src\common\linux\sleep.cpp" />
+    <ClCompile Include="utils\src\common\arrayUtils.cpp" />
+    <ClCompile Include="utils\src\common\stringHelper.cpp" />
+    <ClCompile Include="utils\src\structureDefinitions\structureDefinitionStorage.cpp" />
+    <ClCompile Include="utils\src\structureDefinitions\structureDefinition.cpp" />
+    <ClCompile Include="utils\src\structureDefinitions\structureProperty.cpp" />
+    <ClCompile Include="utils\src\common\constants.cpp" />
+    <ClCompile Include="utils\src\common\stringBuilder.cpp" />
+    <ClCompile Include="utils\src\structureDefinitions\structureDefinitionHelper.cpp" />
   </ItemGroup>
 </Project>
