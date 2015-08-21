@@ -14,6 +14,7 @@ namespace Base
 		public:
 			static StringContainer* SerializeObject(char* definitionName, void* object, bool indent);
 			static void* DeserializeObject(char* definitionName, char* jsonString);
+			static void* DeserializeObject(char* definitionName, char* jsonString, int jsonLength);
 
 		private:
 			static StringContainer* SerializeObject(char* definitionName, void* object, bool indent, int indentionLevel);

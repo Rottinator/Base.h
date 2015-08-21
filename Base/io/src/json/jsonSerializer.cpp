@@ -1,3 +1,5 @@
+#include <cstring>
+
 #include "jsonSerializer.h"
 #include "../../../utils/utils.h"
 
@@ -312,7 +314,16 @@ namespace Base
 
 		void* JsonSerializer::DeserializeObject(char* definitionName, char* jsonString)
 		{
-			return NULL;
+			int length = strlen(jsonString);
+
+			return DeserializeObject(definitionName, jsonString, length);
+		}
+
+		void* JsonSerializer::DeserializeObject(char* definitionName, char* jsonString, int jsonLength)
+		{
+			StructureDefinition* definition = StructureDefinitionStorage::Instance()->GetStructureDefinition(definitionName);
+
+
 		}
 	}
 }
