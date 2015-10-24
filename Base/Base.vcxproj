@@ -38,6 +38,7 @@
     <ClInclude Include="utils\src\common\sleep.h" />
     <ClInclude Include="utils\src\common\stringBuilder.h" />
     <ClInclude Include="utils\src\common\stringHelper.h" />
+    <ClInclude Include="utils\src\common\types.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinition.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinitionHelper.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinitionStorage.h" />

@@ -51,5 +51,18 @@ namespace Base
 				array[i] = 0;
 			}
 		}
+
+		bool ArrayUtils::CompareByteArrays(byte* byteArray1, byte* byteArray2, int length)
+		{
+			for (int i = 0; i < length; i++)
+			{
+				if (byteArray1[i] != byteArray2[i])
+				{
+					return false;
+				}
+			}
+
+			return true;
+		}
 	}
 }

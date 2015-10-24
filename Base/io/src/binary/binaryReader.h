@@ -3,7 +3,7 @@
 
 #include <cstdio>
 
-#include "BinaryReaderBase.h"
+#include "binaryReaderBase.h"
 
 namespace Base
 {

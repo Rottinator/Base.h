@@ -4,6 +4,8 @@
 #include "stringBuilder.h"
 #include "ArrayUtils.h"
 
+#pragma warning(disable : 4996)
+
 namespace Base
 {
 	namespace Utils

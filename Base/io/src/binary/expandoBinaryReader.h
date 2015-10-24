@@ -2,7 +2,7 @@
 #define _EXPANDO_BINARY_READER_H_
 
 #include <cstdio>
-#include "BinaryReader.h"
+#include "binaryReader.h"
 #include "../../../utils/utils.h"
 
 #pragma warning(disable : 4996)

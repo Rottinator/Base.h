@@ -323,7 +323,7 @@ namespace Base
 		{
 			StructureDefinition* definition = StructureDefinitionStorage::Instance()->GetStructureDefinition(definitionName);
 
-
+			return NULL;
 		}
 	}
 }

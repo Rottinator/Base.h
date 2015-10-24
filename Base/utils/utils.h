@@ -1,6 +1,7 @@
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
+#include "src/common/types.h"
 #include "src/common/constants.h"
 #include "src/common/sleep.h"
 #include "src/common/list.h"

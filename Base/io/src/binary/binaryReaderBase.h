@@ -19,7 +19,7 @@ public:
 	virtual float ReadFloat() = 0;
 
 	virtual double ReadDouble() = 0;
-
+	
 	virtual void CloseFile() = 0;
 
 	virtual int GetPosition() = 0;

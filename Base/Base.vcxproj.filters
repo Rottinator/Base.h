@@ -33,6 +33,7 @@
     <ClInclude Include="utils\src\common\constants.h" />
     <ClInclude Include="utils\src\common\stringBuilder.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinitionHelper.h" />
+    <ClInclude Include="utils\src\common\types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="threading\src\windows\thread.cpp" />
