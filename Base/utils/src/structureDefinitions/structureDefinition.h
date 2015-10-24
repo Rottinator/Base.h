@@ -15,13 +15,13 @@ namespace Base
 			char* Name;
 			int Size;
 			StructureDefinition(char* name);
-			void AddDataProperty(char* propertyName, DataType dataType);
+			void AddDataProperty(char* propertyName, DataTypes dataType);
 			void AddObjectProperty(char* propertyName, char* definitionName);
-			void AddDataArrayProperty(char* propertyName, DataType dataType);
+			void AddDataArrayProperty(char* propertyName, DataTypes dataType);
 			void AddObjectArrayProperty(char* propertyName, char* definitionName);
 			void CalculatePropertyAddresses();
 		private:
-			int GetSizeOfDataType(DataType dataType);
+			int GetSizeOfDataType(DataTypes dataType);
 			int GetStructureBlockSize();
 			void CalculateProperty(StructureProperty* property, int structureBlockSize, int dataSize, int* currentBlock, int* completeOffset);
 		};

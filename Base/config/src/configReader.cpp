@@ -21,7 +21,7 @@ namespace Base
 			_configObjectBlockSize = 0;
 		}
 
-		void ConfigReader::AddConfigEntry(char* entryName, DataType dataType)
+		void ConfigReader::AddConfigEntry(char* entryName, DataTypes dataType)
 		{
 			ConfigEntry* configEntry = new ConfigEntry();
 			configEntry->DataType = dataType;
@@ -122,7 +122,7 @@ namespace Base
 		{
 			switch (configEntry->DataType)
 			{
-			case DataType::Bool:
+			case DataTypes::Bool:
 			{
 				char* value = reader->ReadLine();
 				if (reader->IsEOF() == false)
@@ -140,7 +140,7 @@ namespace Base
 				}
 			}
 				break;
-			case DataType::Integer:
+			case DataTypes::Integer:
 			{
 				int configValue = reader->ReadInteger();
 				if (reader->IsEOF() == false)
@@ -150,7 +150,7 @@ namespace Base
 				}
 			}
 				break;
-			case DataType::Float:
+			case DataTypes::Float:
 			{
 				float configValue = reader->ReadFloat();
 				if (reader->IsEOF() == false)
@@ -160,7 +160,7 @@ namespace Base
 				}
 			}
 				break;
-			case DataType::String:
+			case DataTypes::String:
 			{
 				char* value = reader->ReadLine();
 				if (reader->IsEOF() == false)
@@ -181,20 +181,20 @@ namespace Base
 			return true;
 		}
 		
-		int ConfigReader::GetSizeOfDataType(DataType dataType)
+		int ConfigReader::GetSizeOfDataType(DataTypes dataType)
 		{
 			switch (dataType)
 			{
-			case DataType::Bool:
+			case DataTypes::Bool:
 				return sizeof(bool);
 				break;
-			case DataType::Integer:
+			case DataTypes::Integer:
 				return sizeof(int);
 				break;
-			case DataType::Float:
+			case DataTypes::Float:
 				return sizeof(float);
 				break;
-			case DataType::String:
+			case DataTypes::String:
 				return sizeof(char*);
 				break;
 			}

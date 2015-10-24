@@ -59,13 +59,13 @@ namespace Base
 					stringBuilder->Append(" ");
 				}
 				
-				if (property->PropertyType == PropertyType::DataProperty)
+				if (property->PropertyType == PropertyTypes::DataProperty)
 				{
 					StructureDataProperty* dataProperty = (StructureDataProperty*)property;
 					
 					AddDataProperty(dataProperty, stringBuilder, object);
 				}
-				else if (property->PropertyType == PropertyType::ObjectProperty)
+				else if (property->PropertyType == PropertyTypes::ObjectProperty)
 				{
 					StructureObjectProperty* objectProperty = (StructureObjectProperty*)property;
 
@@ -77,7 +77,7 @@ namespace Base
 
 					delete objectString;
 				}
-				else if (property->PropertyType == PropertyType::DataArrayProperty)
+				else if (property->PropertyType == PropertyTypes::DataArrayProperty)
 				{
 					char* arrayIndentions;
 					if (indent)
@@ -127,7 +127,7 @@ namespace Base
 						delete arrayIndentions;
 					}					
 				}
-				else if(property->PropertyType == PropertyType::ObjectArrayProperty)
+				else if(property->PropertyType == PropertyTypes::ObjectArrayProperty)
 				{
 					char* arrayIndentions;
 					if (indent)
@@ -216,7 +216,7 @@ namespace Base
 		{
 			switch (dataProperty->DataType)
 			{
-			case DataType::Bool:
+			case DataTypes::Bool:
 			{
 				bool boolValue = StructureDefinitionHelper::GetBoolPropertyValue(object, dataProperty->AddressOffset);
 				if (boolValue)
@@ -229,19 +229,19 @@ namespace Base
 				}
 				break;
 			}
-			case DataType::Integer:
+			case DataTypes::Integer:
 			{
 				int intValue = StructureDefinitionHelper::GetIntPropertyValue(object, dataProperty->AddressOffset);
 				stringBuilder->Append(intValue);
 				break;
 			}
-			case DataType::Float:
+			case DataTypes::Float:
 			{
 				float floatValue = StructureDefinitionHelper::GetFloatPropertyValue(object, dataProperty->AddressOffset);
 				stringBuilder->Append(floatValue);
 				break;
 			}
-			case DataType::String:
+			case DataTypes::String:
 			{
 				char* charValue = StructureDefinitionHelper::GetStringPropertyValue(object, dataProperty->AddressOffset);
 				stringBuilder->Append("\"");
@@ -258,7 +258,7 @@ namespace Base
 
 			switch (dataArrayProperty->DataType)
 			{
-			case DataType::Bool:
+			case DataTypes::Bool:
 			{
 				bool** boolPointer = (bool**)address;
 				bool boolValue = (*boolPointer)[index];
@@ -273,21 +273,21 @@ namespace Base
 				}
 				break;
 			}
-			case DataType::Integer:
+			case DataTypes::Integer:
 			{
 				int** intPointer = (int**)address;
 				int intValue = (*intPointer)[index];
 				stringBuilder->Append(intValue);
 				break;
 			}
-			case DataType::Float:
+			case DataTypes::Float:
 			{
 				float** floatPointer = (float**)address;
 				float floatValue = (*floatPointer)[index];
 				stringBuilder->Append(floatValue);
 				break;
 			}
-			case DataType::String:
+			case DataTypes::String:
 			{
 				char*** charPointer = (char***)address;
 				char* charValue = (*charPointer)[index];

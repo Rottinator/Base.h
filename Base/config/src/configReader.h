@@ -14,7 +14,7 @@ namespace Base
 		struct ConfigEntry
 		{
 			char* EntryName;
-			DataType DataType;
+			DataTypes DataType;
 			int DataTypeSize;
 			long ConfigObjectStartAddress;
 		};
@@ -27,11 +27,11 @@ namespace Base
 			List<ConfigEntry> _configEntries;
 		public:
 			ConfigReader(void* configObject);
-			void AddConfigEntry(char* entryName, DataType dataType);
+			void AddConfigEntry(char* entryName, DataTypes dataType);
 			bool ReadConfig(char* configPath);
 		private:
 			void CalculateConfigEntriesAddresses();
-			int ConfigReader::GetSizeOfDataType(DataType dataType);
+			int ConfigReader::GetSizeOfDataType(DataTypes dataType);
 			ConfigEntry* GetConfigEntryByName(char* name);
 			bool ReadConfigEntryValue(TextReader* reader, ConfigEntry* configEntry);
 		};

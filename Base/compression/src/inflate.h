@@ -10,7 +10,7 @@ namespace Base
 {
 	namespace Compression
 	{
-		enum DeflateCompressionMode { AutoDetect = 0, None = 1, Default = 2, Best = 3 };
+		enum class DeflateCompressionMode { AutoDetect = 0, None = 1, Default = 2, Best = 3 };
 
 		class FileInflate
 		{
@@ -27,7 +27,7 @@ namespace Base
 			FILE* Input;
 			FILE* Output;
 			unsigned int Size;
-			enum DeflateCompressionMode CompressionMode;
+			DeflateCompressionMode CompressionMode;
 
 			int Decompress();
 		};

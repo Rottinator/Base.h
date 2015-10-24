@@ -6,22 +6,22 @@ namespace Base
 	{
 		StructureDataProperty::StructureDataProperty()
 		{
-			PropertyType = PropertyType::DataProperty;
+			PropertyType = PropertyTypes::DataProperty;
 		}
 
 		StructureObjectProperty::StructureObjectProperty()
 		{
-			PropertyType = PropertyType::ObjectProperty;
+			PropertyType = PropertyTypes::ObjectProperty;
 		}
 
 		StructureDataArrayProperty::StructureDataArrayProperty()
 		{
-			PropertyType = PropertyType::DataArrayProperty;
+			PropertyType = PropertyTypes::DataArrayProperty;
 		}
 
 		StructureObjectArrayProperty::StructureObjectArrayProperty()
 		{
-			PropertyType = PropertyType::ObjectArrayProperty;
+			PropertyType = PropertyTypes::ObjectArrayProperty;
 		}
 	}
 }

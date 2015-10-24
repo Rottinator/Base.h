@@ -11,7 +11,7 @@ namespace Base
 			Properties = new List<StructureProperty>();
 		}
 
-		void StructureDefinition::AddDataProperty(char* propertyName, DataType dataType)
+		void StructureDefinition::AddDataProperty(char* propertyName, DataTypes dataType)
 		{
 			StructureDataProperty* property = new StructureDataProperty();
 			property->Name = propertyName;
@@ -29,14 +29,14 @@ namespace Base
 			Properties->Add(property);
 		}
 
-		void StructureDefinition::AddDataArrayProperty(char* propertyName, DataType dataType)
+		void StructureDefinition::AddDataArrayProperty(char* propertyName, DataTypes dataType)
 		{
 			StructureDataArrayProperty* property = new StructureDataArrayProperty();
 			property->Name = propertyName;
 			property->DataType = dataType;
 			
 			StructureDataProperty* lengthProperty = new StructureDataProperty();
-			lengthProperty->DataType = DataType::Integer;
+			lengthProperty->DataType = DataTypes::Integer;
 
 			property->LengthProperty = lengthProperty;
 
@@ -50,7 +50,7 @@ namespace Base
 			property->StructureDefinitionName = definitionName;
 
 			StructureDataProperty* lengthProperty = new StructureDataProperty();
-			lengthProperty->DataType = DataType::Integer;
+			lengthProperty->DataType = DataTypes::Integer;
 
 			property->LengthProperty = lengthProperty;
 
@@ -71,11 +71,11 @@ namespace Base
 
 				int dataSize;
 				
-				if (property->PropertyType == PropertyType::DataArrayProperty || property->PropertyType == PropertyType::ObjectProperty || property->PropertyType == PropertyType::ObjectArrayProperty)
+				if (property->PropertyType == PropertyTypes::DataArrayProperty || property->PropertyType == PropertyTypes::ObjectProperty || property->PropertyType == PropertyTypes::ObjectArrayProperty)
 				{
 					dataSize = POINTER_SIZE;
 				}
-				else if (property->PropertyType == PropertyType::DataProperty)
+				else if (property->PropertyType == PropertyTypes::DataProperty)
 				{
 					StructureDataProperty* dataProperty = (StructureDataProperty*)property;
 					dataSize = GetSizeOfDataType(dataProperty->DataType);
@@ -83,13 +83,13 @@ namespace Base
 
 				CalculateProperty(property, structureBlockSize, dataSize, &currentBlock, &completeOffset);
 
-				if (property->PropertyType == PropertyType::DataArrayProperty)
+				if (property->PropertyType == PropertyTypes::DataArrayProperty)
 				{
 					StructureDataArrayProperty* dataArrayProperty = (StructureDataArrayProperty*)property;
 					dataSize = GetSizeOfDataType(dataArrayProperty->LengthProperty->DataType);
 					CalculateProperty(dataArrayProperty->LengthProperty, structureBlockSize, dataSize, &currentBlock, &completeOffset);
 				}
-				else if (property->PropertyType == PropertyType::ObjectArrayProperty)
+				else if (property->PropertyType == PropertyTypes::ObjectArrayProperty)
 				{
 					StructureObjectArrayProperty* objectArrayProperty = (StructureObjectArrayProperty*)property;
 					dataSize = GetSizeOfDataType(objectArrayProperty->LengthProperty->DataType);
@@ -113,20 +113,20 @@ namespace Base
 			*currentBlock += dataSize;
 		}
 
-		int StructureDefinition::GetSizeOfDataType(DataType dataType)
+		int StructureDefinition::GetSizeOfDataType(DataTypes dataType)
 		{
 			switch (dataType)
 			{
-			case DataType::Bool:
+			case DataTypes::Bool:
 				return sizeof(bool);
 				break;
-			case DataType::Integer:
+			case DataTypes::Integer:
 				return sizeof(int);
 				break;
-			case DataType::Float:
+			case DataTypes::Float:
 				return sizeof(float);
 				break;
-			case DataType::String:
+			case DataTypes::String:
 				return sizeof(char*);
 				break;
 			}
@@ -143,7 +143,7 @@ namespace Base
 			{
 				StructureProperty* property = Properties->GetItem(i);
 
-				if (property->PropertyType == PropertyType::DataProperty)
+				if (property->PropertyType == PropertyTypes::DataProperty)
 				{
 					StructureDataProperty* dataProperty = (StructureDataProperty*)property;
 					int dataSize = GetSizeOfDataType(dataProperty->DataType);
@@ -153,7 +153,7 @@ namespace Base
 						structureBlockSize = dataSize;
 					}
 				}
-				else if (property->PropertyType == PropertyType::DataArrayProperty)
+				else if (property->PropertyType == PropertyTypes::DataArrayProperty)
 				{
 					StructureDataArrayProperty* dataArrayProperty = (StructureDataArrayProperty*)property;
 
@@ -169,7 +169,7 @@ namespace Base
 						structureBlockSize = lengthDataTypeSize;
 					}
 				}
-				else if (property->PropertyType == PropertyType::ObjectProperty)
+				else if (property->PropertyType == PropertyTypes::ObjectProperty)
 				{
 					StructureObjectProperty* objectProperty = (StructureObjectProperty*)property;
 
@@ -178,7 +178,7 @@ namespace Base
 						structureBlockSize = POINTER_SIZE;
 					}
 				}
-				else if (property->PropertyType == PropertyType::ObjectArrayProperty)
+				else if (property->PropertyType == PropertyTypes::ObjectArrayProperty)
 				{
 					StructureObjectArrayProperty* objectArrayProperty = (StructureObjectArrayProperty*)property;
 

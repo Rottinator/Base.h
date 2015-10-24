@@ -7,15 +7,15 @@ namespace Base
 {
 	namespace Utils
 	{
-		enum DataType { Integer = 0, Bool = 1, Float = 2, String = 3 };
+		enum class DataTypes { Integer = 0, Bool = 1, Float = 2, String = 3 };
 
-		enum PropertyType { DataProperty = 0, ObjectProperty = 1, DataArrayProperty = 2, ObjectArrayProperty = 3 };
+		enum class PropertyTypes { DataProperty = 0, ObjectProperty = 1, DataArrayProperty = 2, ObjectArrayProperty = 3 };
 
 		class StructureProperty
 		{
 		public:
 			char* Name;
-			PropertyType PropertyType;
+			PropertyTypes PropertyType;
 			int AddressOffset;
 		};
 
@@ -23,7 +23,7 @@ namespace Base
 		{
 		public:
 			StructureDataProperty();
-			DataType DataType;
+			DataTypes DataType;
 		};
 
 		class StructureObjectProperty : public StructureProperty
@@ -37,7 +37,7 @@ namespace Base
 		{
 		public:
 			StructureDataArrayProperty();
-			DataType DataType;
+			DataTypes DataType;
 			StructureDataProperty* LengthProperty;
 		};
 
