@@ -31,7 +31,7 @@ namespace Base
 			bool ReadConfig(char* configPath);
 		private:
 			void CalculateConfigEntriesAddresses();
-			int ConfigReader::GetSizeOfDataType(DataTypes dataType);
+			int GetSizeOfDataType(DataTypes dataType);
 			ConfigEntry* GetConfigEntryByName(char* name);
 			bool ReadConfigEntryValue(TextReader* reader, ConfigEntry* configEntry);
 		};
