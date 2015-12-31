@@ -1,5 +1,6 @@
 #include "structureDefinition.h"
 #include "../common/constants.h"
+#include "../../../collections/src/linkedList.h"
 
 namespace Base
 {
@@ -8,7 +9,7 @@ namespace Base
 		StructureDefinition::StructureDefinition(char* name)
 		{
 			Name = name;
-			Properties = new List<StructureProperty>();
+			Properties = new LinkedList<StructureProperty*>();
 		}
 
 		void StructureDefinition::AddDataProperty(char* propertyName, DataTypes dataType)

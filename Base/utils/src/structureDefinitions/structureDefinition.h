@@ -1,8 +1,10 @@
 #ifndef _STRUCTURE_DEFINITION_H_
 #define _STRUCTURE_DEFINITION_H_
 
-#include "../common/list.h"
+#include "../../../collections/src/linkedList.h"
 #include "structureProperty.h"
+
+using namespace Base::Collections;
 
 namespace Base
 {
@@ -11,7 +13,7 @@ namespace Base
 		class StructureDefinition
 		{
 		public:
-			List<StructureProperty>* Properties;
+			LinkedList<StructureProperty*>* Properties;
 			char* Name;
 			int Size;
 			StructureDefinition(char* name);

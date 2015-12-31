@@ -1,5 +1,8 @@
 #include <cstring>
 #include "structureDefinitionStorage.h"
+#include "../../../collections/src/linkedList.h"
+
+using namespace Base::Collections;
 
 namespace Base
 {
@@ -9,7 +12,7 @@ namespace Base
 
 		StructureDefinitionStorage::StructureDefinitionStorage()
 		{
-			_structureDefinitions = new List<StructureDefinition>();
+			_structureDefinitions = new LinkedList<StructureDefinition*>();
 		}
 
 		StructureDefinitionStorage* StructureDefinitionStorage::Instance()

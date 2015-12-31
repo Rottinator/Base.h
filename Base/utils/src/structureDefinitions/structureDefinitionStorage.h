@@ -1,7 +1,7 @@
 #ifndef _STRUCTURE_DEFINITION_STORAGE_H_
 #define _STRUCTURE_DEFINITION_STORAGE_H_
 
-#include "../common/list.h"
+#include "../../../collections/src/linkedList.h"
 #include "structureDefinition.h"
 
 namespace Base
@@ -12,7 +12,7 @@ namespace Base
 		{
 		private:
 			static StructureDefinitionStorage* _instance;
-			List<StructureDefinition>* _structureDefinitions;
+			LinkedList<StructureDefinition*>* _structureDefinitions;
 			StructureDefinitionStorage();
 		public:
 			static StructureDefinitionStorage* Instance();

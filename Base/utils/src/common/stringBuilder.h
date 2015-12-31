@@ -1,7 +1,9 @@
 #ifndef _STRING_BUILDER_H_
 #define _STRING_BUILDER_H_
 
-#include "list.h"
+#include "../../../collections/src/linkedList.h"
+
+using namespace Base::Collections;
 
 namespace Base
 {
@@ -16,7 +18,7 @@ namespace Base
 		class StringBuilder
 		{
 		private:
-			List<StringContainer>* _stringList;
+			LinkedList<StringContainer*>* _stringList;
 			int _completeLength;
 		public:
 			StringBuilder();

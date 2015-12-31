@@ -8,7 +8,6 @@ namespace Base
 		class StructureDefinitionHelper
 		{
 		public:
-			
 			static int GetIntPropertyValue(void* object, int addressOffset);
 			static float GetFloatPropertyValue(void* object, int addressOffset);
 			static char* GetStringPropertyValue(void* object, int addressOffset);

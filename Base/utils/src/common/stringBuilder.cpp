@@ -2,9 +2,12 @@
 #include <cstring>
 
 #include "stringBuilder.h"
-#include "ArrayUtils.h"
+#include "arrayUtils.h"
+#include "../../../collections/src/linkedList.h"
 
 #pragma warning(disable : 4996)
+
+using namespace Base::Collections;
 
 namespace Base
 {
@@ -12,7 +15,7 @@ namespace Base
 	{
 		StringBuilder::StringBuilder()
 		{
-			this->_stringList = new List<StringContainer>();
+			this->_stringList = new LinkedList<StringContainer*>();
 			this->_completeLength = 0;
 		}
 
@@ -34,8 +37,8 @@ namespace Base
 		void StringBuilder::Append(char* string)
 		{
 			int stringLength = strlen(string);
-			char* copy = new char[stringLength+1]; //Wenn ich hier nicht 1 mehr allozieren, dann crashed das Freigeben, da das String-ende zeichen am schluss fehlt, da wir aber das später nicht im string immer dabeihaben wollen nehmen wirs bei der länge unten nicht mit
-			copy[stringLength] = 0; //Sicher ist sicher
+			char* copy = new char[stringLength+1];
+			copy[stringLength] = 0; //Stringende
 
 			strcpy(copy, string);
 
@@ -54,8 +57,8 @@ namespace Base
 
 			if (copy)
 			{
-				char* copy = new char[length + 1]; //Wenn ich hier nicht 1 mehr allozieren, dann crashed das Freigeben, da das String-ende zeichen am schluss fehlt, da wir aber das später nicht im string immer dabeihaben wollen nehmen wirs bei der länge unten nicht mit
-				copy[length] = 0; //Sicher ist sicher
+				char* copy = new char[length + 1];
+				copy[length] = 0; //Stringende
 
 				strcpy(copy, string);
 				container->String = copy;

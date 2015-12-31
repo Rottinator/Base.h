@@ -24,7 +24,6 @@
     <ClInclude Include="io\src\text\textReader.h" />
     <ClInclude Include="io\src\json\jsonSerializer.h" />
     <ClInclude Include="utils\src\common\ArrayUtils.h" />
-    <ClInclude Include="utils\src\common\list.h" />
     <ClInclude Include="utils\src\common\sleep.h" />
     <ClInclude Include="utils\src\common\stringHelper.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinitionStorage.h" />
@@ -34,6 +33,19 @@
     <ClInclude Include="utils\src\common\stringBuilder.h" />
     <ClInclude Include="utils\src\structureDefinitions\structureDefinitionHelper.h" />
     <ClInclude Include="utils\src\common\types.h" />
+    <ClInclude Include="collections\collections.h" />
+    <ClInclude Include="collections\src\arrayList.h" />
+    <ClInclude Include="collections\src\linkedList.h" />
+    <ClInclude Include="collections\src\list.h" />
+    <ClInclude Include="collections\src\map.h" />
+    <ClInclude Include="collections\src\standardMap.h" />
+    <ClInclude Include="collections\src\hashMap.h" />
+    <ClInclude Include="collections\src\iterable.h" />
+    <ClInclude Include="collections\src\array.h" />
+    <ClInclude Include="collections\src\iterators\iterator.h" />
+    <ClInclude Include="collections\src\iterators\arrayIterator.h" />
+    <ClInclude Include="collections\src\iterators\linkedListIterator.h" />
+    <ClInclude Include="collections\src\linkedListItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="threading\src\windows\thread.cpp" />

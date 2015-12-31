@@ -11,7 +11,7 @@ namespace Base
 {
 	namespace IO
 	{
-		class ExpandoBinaryReader : BinaryReaderBase
+		class ExpandoBinaryReader : public BinaryReaderBase
 		{
 		private:
 			BinaryReader _binaryReader;

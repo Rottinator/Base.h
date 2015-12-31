@@ -12,6 +12,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h" />
+    <ClInclude Include="collections\collections.h" />
+    <ClInclude Include="collections\src\array.h" />
+    <ClInclude Include="collections\src\hashMap.h" />
+    <ClInclude Include="collections\src\iterable.h" />
+    <ClInclude Include="collections\src\iterators\arrayIterator.h" />
+    <ClInclude Include="collections\src\iterators\iterator.h" />
+    <ClInclude Include="collections\src\iterators\linkedListIterator.h" />
+    <ClInclude Include="collections\src\linkedList.h" />
+    <ClInclude Include="collections\src\linkedListItem.h" />
+    <ClInclude Include="collections\src\list.h" />
+    <ClInclude Include="collections\src\map.h" />
+    <ClInclude Include="collections\src\standardMap.h" />
     <ClInclude Include="compression\compression.h" />
     <ClInclude Include="compression\src\inflate.h" />
     <ClInclude Include="config\config.h" />
@@ -34,7 +46,7 @@
     <ClInclude Include="threading\threading.h" />
     <ClInclude Include="utils\src\common\ArrayUtils.h" />
     <ClInclude Include="utils\src\common\constants.h" />
-    <ClInclude Include="utils\src\common\list.h" />
+    <ClInclude Include="collections\src\arrayList.h" />
     <ClInclude Include="utils\src\common\sleep.h" />
     <ClInclude Include="utils\src\common\stringBuilder.h" />
     <ClInclude Include="utils\src\common\stringHelper.h" />

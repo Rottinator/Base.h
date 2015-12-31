@@ -1,8 +1,6 @@
 #ifndef _STRUCTURE_PROPERTY_H_
 #define _STRUCTURE_PROPERTY_H_
 
-#include "../common/list.h"
-
 namespace Base
 {
 	namespace Utils

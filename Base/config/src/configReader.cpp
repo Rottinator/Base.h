@@ -2,9 +2,11 @@
 #include <cstring>
 
 #include "configReader.h"
+#include "../../collections/src/linkedList.h"
 #include "../../utils/utils.h"
 #include "../../io/io.h"
 
+using namespace Base::Collections;
 using namespace Base::Utils;
 using namespace Base::IO;
 
@@ -16,7 +18,7 @@ namespace Base
 
 		ConfigReader::ConfigReader(void* configObject)
 		{
-			_configEntries = List<ConfigEntry>();
+			_configEntries = LinkedList<ConfigEntry*>();
 			_currentConfigAddress = (long)configObject;
 			_configObjectBlockSize = 0;
 		}

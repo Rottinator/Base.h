@@ -1,6 +1,7 @@
 #ifndef _BASE_H_
 #define _BASE_H_
 
+#include "collections/collections.h"
 #include "compression/compression.h"
 #include "config/config.h"
 #include "io/io.h"

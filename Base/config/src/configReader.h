@@ -1,7 +1,7 @@
 #ifndef _CONFIG_READER_H_
 #define _CONFIG_READER_H_
 
-#include "../../utils/utils.h"
+#include "../../collections/src/linkedList.h"
 #include "../../io/io.h"
 
 using namespace Base::Utils;
@@ -24,7 +24,7 @@ namespace Base
 		private:
 			long _currentConfigAddress;
 			int _configObjectBlockSize;
-			List<ConfigEntry> _configEntries;
+			LinkedList<ConfigEntry*> _configEntries;
 		public:
 			ConfigReader(void* configObject);
 			void AddConfigEntry(char* entryName, DataTypes dataType);
