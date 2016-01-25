@@ -18,6 +18,7 @@
     <ClInclude Include="collections\src\invalidIndexException.h" />
     <ClInclude Include="collections\src\iterable.h" />
     <ClInclude Include="collections\src\iterators\arrayIterator.h" />
+    <ClInclude Include="collections\src\iterators\hashMapIterator.h" />
     <ClInclude Include="collections\src\iterators\iterator.h" />
     <ClInclude Include="collections\src\iterators\linkedListIterator.h" />
     <ClInclude Include="collections\src\iterators\standardMapIterator.h" />

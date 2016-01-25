@@ -48,6 +48,7 @@
     <ClInclude Include="collections\src\linkedListItem.h" />
     <ClInclude Include="collections\src\invalidIndexException.h" />
     <ClInclude Include="collections\src\iterators\standardMapIterator.h" />
+    <ClInclude Include="collections\src\iterators\hashMapIterator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="threading\src\windows\thread.cpp" />
