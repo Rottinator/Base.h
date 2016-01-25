@@ -4,6 +4,7 @@
 #include <unordered_map>
 
 #include "../../utils/src/common/types.h"
+#include "iterators/hashMapIterator.h"
 #include "map.h"
 
 namespace Base
@@ -11,14 +12,38 @@ namespace Base
 	namespace Collections
 	{
 		template <class TKey, class TValue>
-		class StandardMap : public Map<TKey, TValue>
+		class HashMap : public Map<TKey, TValue>
 		{
 		private:
-			std::unordered_map<TKey, TValue>* _stdMap;
+			std::unordered_map<TKey, TValue> _stdMap;
+			HashMapIterator<TKey, TValue>* _iterator;
 		public:
-			StandardMap()
+			HashMap()
 			{
-				this->_stdMap = new std::unordered_map<TKey, TValue>();
+				this->_stdMap = std::unordered_map<TKey, TValue>();
+				this->_iterator = NULL;
+			}
+
+			~HashMap()
+			{
+				delete _stdMap;
+
+				if (this->_iterator != NULL)
+				{
+					delete this->_iterator;
+				}
+			}
+
+			Iterator<KeyValuePair<TKey, TValue>>* GetIterator()
+			{
+				if (this->_iterator == NULL)
+				{
+					this->_iterator = new HashMapIterator<TKey, TValue>(&this->_stdMap);
+				}
+
+				this->_iterator->Reset();
+
+				return (Iterator<KeyValuePair<TKey, TValue>>*) this->_iterator;
 			}
 
 			uint Count()
@@ -43,7 +68,7 @@ namespace Base
 
 			bool ContainsKey(TKey key)
 			{
-				std::map<TKey, TValue>::iterator itr = this->_stdMap.find(key);
+				typename std::unordered_map<TKey, TValue>::iterator itr = this->_stdMap.find(key);
 
 				return itr != this->_stdMap.end();
 			}

@@ -7,6 +7,7 @@
 #include "linkedListItem.h"
 #include "list.h"
 #include "iterators/linkedListIterator.h"
+#include "invalidIndexException.h"
 
 namespace Base
 {
@@ -20,6 +21,61 @@ namespace Base
 		    __PRIVATE_LINKED_LIST::LinkedListItem<T>* _first;
 			__PRIVATE_LINKED_LIST::LinkedListItem<T>* _last;
 			LinkedListIterator<T>* _iterator;
+
+		protected:
+			T& GetRefItem(uint index)
+			{
+				if (index >= this->_count)
+				{
+					throw InvalidIndexException(this->_count, index);
+				}
+				
+				uint indexToLast = this->_count - index;
+
+				__PRIVATE_LINKED_LIST::LinkedListItem<T>* listItem;
+
+				if (index < indexToLast)
+				{
+					listItem = this->_first;
+
+					for (uint i = 0; i < index; i++)
+					{
+						if (listItem->Next == NULL)
+						{
+							throw InvalidIndexException(this->_count, index);
+						}
+						else
+						{
+							listItem = listItem->Next;
+						}
+					}
+				}
+				else
+				{
+					listItem = this->_last;
+
+					for (uint i = this->_count; i > indexToLast; i--)
+					{
+						if (listItem->Before == NULL)
+						{
+							throw InvalidIndexException(this->_count, index);
+						}
+						else
+						{
+							listItem = listItem->Before;
+						}
+					}
+				}
+
+				if (listItem == NULL)
+				{
+					throw InvalidIndexException(this->_count, index);
+				}
+				else
+				{
+					return listItem->Value;
+				}
+			}
 
 		public:
 			LinkedList()
@@ -103,60 +159,6 @@ namespace Base
 							listItem = listItem->Next;
 						}
 					}
-				}
-			}
-
-			T GetItem(int index)
-			{
-				if (this->_first == NULL)
-				{
-					return NULL;
-				}
-
-				int indexToLast = this->_count - index;
-
-				__PRIVATE_LINKED_LIST::LinkedListItem<T>* listItem;
-
-				if (index < indexToLast)
-				{
-					listItem = this->_first;
-
-					for (int i = 0; i < index; i++)
-					{
-						if (listItem->Next == NULL)
-						{
-							return NULL;
-						}
-						else
-						{
-							listItem = listItem->Next;
-						}
-					}
-				}
-				else
-				{
-					listItem = this->_last;
-
-					for (int i = this->_count; i > indexToLast; i--)
-					{
-						if (listItem->Before == NULL)
-						{
-							return NULL;
-						}
-						else
-						{
-							listItem = listItem->Before;
-						}
-					}
-				}
-				
-				if (listItem == NULL)
-				{
-					return NULL;
-				}
-				else
-				{
-					return listItem->Value;
 				}
 			}
 

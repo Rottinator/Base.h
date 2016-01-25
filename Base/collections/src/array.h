@@ -6,6 +6,7 @@
 #include "../../utils/src/common/types.h"
 #include "iterable.h"
 #include "iterators/arrayIterator.h"
+#include "invalidIndexException.h"
 
 namespace Base
 {
@@ -40,6 +41,16 @@ namespace Base
 			uint Count()
 			{
 				return this->_count;
+			}
+
+			T& operator[] (uint index)
+			{
+				if (index >= this->_count)
+				{
+					throw InvalidIndexException(this->_count, index);
+				}
+
+				return this->_items[index];
 			}
 
 			Iterator<T>* GetIterator()

@@ -46,6 +46,8 @@
     <ClInclude Include="collections\src\iterators\arrayIterator.h" />
     <ClInclude Include="collections\src\iterators\linkedListIterator.h" />
     <ClInclude Include="collections\src\linkedListItem.h" />
+    <ClInclude Include="collections\src\invalidIndexException.h" />
+    <ClInclude Include="collections\src\iterators\standardMapIterator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="threading\src\windows\thread.cpp" />
@@ -74,5 +76,6 @@
     <ClCompile Include="utils\src\common\constants.cpp" />
     <ClCompile Include="utils\src\common\stringBuilder.cpp" />
     <ClCompile Include="utils\src\structureDefinitions\structureDefinitionHelper.cpp" />
+    <ClCompile Include="collections\src\invalidIndexException.cpp" />
   </ItemGroup>
 </Project>

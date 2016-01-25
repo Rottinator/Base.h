@@ -15,10 +15,12 @@
     <ClInclude Include="collections\collections.h" />
     <ClInclude Include="collections\src\array.h" />
     <ClInclude Include="collections\src\hashMap.h" />
+    <ClInclude Include="collections\src\invalidIndexException.h" />
     <ClInclude Include="collections\src\iterable.h" />
     <ClInclude Include="collections\src\iterators\arrayIterator.h" />
     <ClInclude Include="collections\src\iterators\iterator.h" />
     <ClInclude Include="collections\src\iterators\linkedListIterator.h" />
+    <ClInclude Include="collections\src\iterators\standardMapIterator.h" />
     <ClInclude Include="collections\src\linkedList.h" />
     <ClInclude Include="collections\src\linkedListItem.h" />
     <ClInclude Include="collections\src\list.h" />
@@ -58,6 +60,7 @@
     <ClInclude Include="utils\utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="collections\src\invalidIndexException.cpp" />
     <ClCompile Include="compression\src\inflate.cpp" />
     <ClCompile Include="compression\src\miniz.c" />
     <ClCompile Include="config\src\configReader.cpp" />

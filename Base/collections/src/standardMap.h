@@ -4,6 +4,7 @@
 #include <map>
 
 #include "../../utils/src/common/types.h"
+#include "iterators/standardMapIterator.h"
 #include "map.h"
 
 namespace Base
@@ -15,10 +16,32 @@ namespace Base
 		{
 		private:
 			std::map<TKey, TValue> _stdMap;
+			StandardMapIterator<TKey, TValue>* _iterator;
 		public:
 			StandardMap()
 			{
 				this->_stdMap = std::map<TKey, TValue>();
+				this->_iterator = NULL;
+			}
+
+			~StandardMap()
+			{
+				if (this->_iterator != NULL)
+				{
+					delete this->_iterator;
+				}
+			}
+
+			Iterator<KeyValuePair<TKey, TValue>>* GetIterator()
+			{
+				if (this->_iterator == NULL)
+				{
+					this->_iterator = new StandardMapIterator<TKey, TValue>(&this->_stdMap);
+				}
+
+				this->_iterator->Reset();
+
+				return (Iterator<KeyValuePair<TKey, TValue>>*)this->_iterator;
 			}
 
 			uint Count()
@@ -43,7 +66,7 @@ namespace Base
 			
 			bool ContainsKey(TKey key)
 			{
-				std::map<TKey, TValue>::iterator itr = this->_stdMap.find(key);
+				typename std::map<TKey, TValue>::iterator itr = this->_stdMap.find(key);
 
 				return itr != this->_stdMap.end();
 			}

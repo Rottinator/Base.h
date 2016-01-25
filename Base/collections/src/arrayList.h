@@ -6,6 +6,7 @@
 #include "../../utils/src/common/types.h"
 #include "list.h"
 #include "iterators/arrayIterator.h"
+#include "invalidIndexException.h"
 
 namespace Base
 {
@@ -19,6 +20,17 @@ namespace Base
 			T* _listItems;
 			ArrayIterator<T>* _iterator;
 			
+		protected:
+			T& GetRefItem(uint index)
+			{
+				if (index >= this->_count)
+				{
+					throw InvalidIndexException(this->_count, index);
+				}
+
+				return this->_listItems[index];
+			}
+
 		public:
 			ArrayList()
 			{
@@ -90,11 +102,6 @@ namespace Base
 				delete this->_listItems;
 				this->_listItems = newListItems;
 				this->_count--;
-			}
-
-			T GetItem(uint index)
-			{
-				return this->_listItems[index];
 			}
 
 			void Clear()
